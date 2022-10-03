@@ -1,0 +1,19 @@
+---
+apiVersion: pkg.crossplane.io/v1alpha1
+kind: ControllerConfig
+metadata:
+  name: jet-aws-config
+  labels:
+    app: crossplane-provider-jet-aws
+spec:
+  image: crossplane/provider-jet-aws-controller:v0.1.0
+  args: ["-d"]
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: crossplane-provider-jet-aws
+spec:
+  package: crossplane/provider-jet-aws:v0.1.0
+  controllerConfigRef:
+    name: jet-aws-config

@@ -1,0 +1,11 @@
+apiVersion: iam.aws.jet.crossplane.io/v1alpha1
+kind: User
+metadata:
+  name: userk
+  namespace: crossplane-system
+spec:
+  forProvider:
+    name: kaushik
+    
+  providerConfigRef:
+    name: default
